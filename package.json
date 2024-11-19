@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.ts",
-    "start": "ts-node index.ts",
+    "start": "node dist/index.js",
     "stripe": "stripe listen --forward-to localhost:8000/api/v1/order/webhook",
-    "build": "npm install"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

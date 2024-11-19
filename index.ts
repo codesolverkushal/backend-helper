@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // default middleware for any mern project
 
@@ -35,7 +35,9 @@ app.use("/api/v1/order", orderRoute);
 
 
 
-
+if (!PORT) {
+    throw new Error("PORT environment variable is not set.");
+}
 
 app.listen(PORT,()=>{
     connectDb();
